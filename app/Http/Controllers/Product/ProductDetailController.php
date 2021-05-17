@@ -11,7 +11,8 @@ class ProductDetailController extends Controller
 {
     public function show($id)
     {
-        $item = DB::table('products')->where('id', $id)->first();
+
+        $item = Product::all('*')->where('id', $id)->first();
         return view('product.showProduct', [
             'item' => $item
         ]);
